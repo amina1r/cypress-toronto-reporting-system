@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cypress</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav id="desktop-nav">
+        <div class="nav-container">
+            <div class="cypress_nav_img">
+                <img src="./cypress-nav.png" alt="Cypress Nav">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#report">Report</a></li>
+                <li><a href="#support">Support</a></li>
+            </ul>
+        </div>
+    </nav>
+    <section id="about">
+        <div class="cypress_img">
+            <img src="./cypress-logo.png" alt="Cypress Logo">
+        </div>
+        <div class="about__text">
+            <p class="about__text__p1">Welcome to Cypress.</p>
+            <p class="about__text__p2">Report to the City of Toronto here!</p>
+            <div class="report-btn-container">
+                <a href="#report" id="getStartedBtn">
+                    <button>Get Started</button>
+                </a>
+            </div>
+        </div>
+    </section>
+    <section id="report">
+        <div class="report-header">
+            <h1 style="font-size: 45px; font-weight: bold;">Report a Problem</h1>
+            <p style="font-size: 20px;">Click a location on the map to get started.</p>
+        </div>
+        <div class="report-content">
+            <div class="map_img">
+                <iframe src="mapfile.html" width="600" height="842" style="border:none;"></iframe>
+            </div>
+            <div class="report-text">
+                <form id="reportForm">
+                    <div class="report-text__header">
+                        <h2 style="font-size: 35px; font-weight: bold;">Report a Problem</h2>
+                        <p>Please fill out the form below.</p>
+                    </div>
+
+                    <div class="iconText">
+                        <label for="iconSelection" style="font-size: 16px; font-weight: bold;">Select an
+                            Issue<span style="color: red;">*</span></label><br>
+                    </div>
+                    <div class="icon-container" aria-required="true">
+                        <div class="icon" id="icon1" onclick="selectIcon(1)" title="Snow Clearing & Winter Maintenance">
+                            <img src="1.jpg" alt="Icon 1">
+                        </div>
+                        <div class="icon" id="icon2" onclick="selectIcon(2)" title="Animals, Insects & Pests">
+                            <img src="2.jpg" alt="Icon 2">
+                        </div>
+                        <div class="icon" id="icon3" onclick="selectIcon(3)" title="Waste Collection & Cleanup">
+                            <img src="3.png" alt="Icon 3">
+                        </div>
+                        <div class="icon" id="icon4" onclick="selectIcon(4)" title="Graffiti">
+                            <img src="4.png" alt="Icon 4">
+                        </div>
+                        <div class="icon" id="icon5" onclick="selectIcon(5)" title="Water & Sewers">
+                            <img src="5.png" alt="Icon 5">
+                        </div>
+                        <div class="icon" id="icon6" onclick="selectIcon(6)" title="Spills">
+                            <img src="6.png" alt="Icon 6">
+                        </div>
+                    </div>
+
+                    <input type="hidden" id="selectedIcon" name="selectedIcon" value="" required>
+
+                    <label for="severity" style="font-size: 16px; font-weight: bold;">Problem Severity<span
+                            style="color: red;">*</span></label><br>
+                    <input type="range" id="severity" name="severity" min="1" max="4" value="2" step="1"
+                        class="severity-slider">
+                    <span id="severity-value" style="font-size: 14px; color: #fff;">Moderate</span><br><br>
+
+                    <div class="form-group">
+                        <label for="location">Location<span style="color: red;">*</span></label>
+                        <input type="text" id="location" name="location"
+                            placeholder="Enter the location's name/coordinates" style="height: 35px;" required>
+                        <span class="error-message" id="locationError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">Problem Description<span style="color: red;">*</span></label>
+                        <input type="text" id="description" name="description"
+                            placeholder="Enter a description of the problem (max 20 words)" style="height: 35px;"
+                            required>
+                        <span class="error-message" id="descriptionError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="userName">Name<span style="color: red;">*</span></label>
+                        <input type="text" id="userName" name="userName" placeholder="Enter your full name"
+                            style="height: 35px;" required>
+                        <span class="error-message" id="userNameError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email<span style="color: red;">*</span></label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" style="height: 35px;"
+                            required>
+                        <span class="error-message" id="emailError"></span>
+                    </div>
+
+
+                    <label for="" style="font-size: 16px; font-weight: bold;">Report Notifications<span
+                            style="color: red;">*</span></label><br>
+                    <p style="font-size: 14px;">Would you like to receive updates about the status?</p>
+                    <div class="checkbox-options">
+                        <div class="checkbox-item">
+                            <input type="radio" id="yes" value="Yes" name="notifications" required>
+                            <label for="yes">Yes</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="radio" id="no" value="No" name="notifications">
+                            <label for="no">No</label>
+                        </div>
+                    </div>
+
+                    <button type="button" id="submitButton" style="font-size: 16px; font-weight: bold;">Submit</button>
+                </form>
+
+                <div id="confirmationButton" class="confirmation" style="display: none;">
+                    <div class="confirmation-consent">
+                        <p>Are you sure you want to submit this report?</p>
+                        <div class="confirmation-buttons">
+                            <button id="cancelButton" class="cancel-button">Cancel</button>
+                            <button id="confirmButton" class="confirm-button">Confirm</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="support">
+        <div class="support-container">
+            <div class="feedback-wrapper">
+                <div class="support-header">
+                    <h2>Got Feedback?</h2>
+                    <p>If you have any suggestions or feedback about the website, let us know!</p>
+                </div>
+                <div class="feedback-content">
+                    <div class="feedback-box">
+                        <form class="feedback-form">
+                            <label for="feedback-name"> Name (optional):</label>
+                            <input type="text" id="feedback-name" name="name" placeholder="Enter your name">
+
+                            <label for="feedback-email">Email (optional):</label>
+                            <input type="email" id="feedback-email" name="email" placeholder="Enter your email">
+
+                            <label for="feedback-message">Feedback:</label>
+                            <textarea id="feedback-message" name="feedback"
+                                placeholder="Write your feedback here"></textarea>
+
+                            <button type="submit" class="feedback-submit-btn">Submit Feedback</button>
+                        </form>
+                    </div>
+                    <div class="cypress_nav_image">
+                        <img src="./cypress-nav.png" alt="Cypress Nav">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p> Developed by: Aminah Reza, Helena Kosmajac, Lala Hussein, Mahwish Ahmad, Melissa Smith</p>
+    </footer>
+    <footer class="site-footer">
+        <p>
+            Icons by <a href="https://www.flaticon.com/free-icons/waste" title="waste icons">Freepik</a>, <a
+                href="https://www.flaticon.com/free-icons/mural" title="mural icons">Freepik</a>, <a
+                href="https://www.flaticon.com/free-icons/sewage" title="sewage icons">surang</a>, <a
+                href="https://www.flaticon.com/free-icons/oil-spill" title="oil spill icons">Handicon</a>, <a
+                href="https://www.flaticon.com/free-icons/art-and-design" title="art and design icons">Prosymbols
+                Premium</a> — from <a href="https://www.flaticon.com" title="Flaticon">Flaticon</a>
+        </p>
+    </footer>
+    <script src="script.js"></script>
+    <h1></h1>
+</body>
