@@ -48,7 +48,8 @@ p {
     width: 200px;
 }
 
-nav, .nav-links {
+nav,
+.nav-links {
     display: flex;
 }
 
@@ -208,7 +209,8 @@ a:hover {
     color: rgb(176, 194, 211);
 }
 
-.report-text input, .report-text textarea {
+.report-text input,
+.report-text textarea {
     background-color: #ffffffb9;
     color: #000000;
     border-radius: 8px;
@@ -250,7 +252,9 @@ a:hover {
     cursor: pointer;
 }
 
-form input, form textarea, form button {
+form input,
+form textarea,
+form button {
     width: 100%;
     padding: 0.5rem;
     margin-bottom: 0.5rem;
@@ -438,7 +442,8 @@ form button:hover {
     gap: 0.8rem;
 }
 
-.confirm-button, .cancel-button {
+.confirm-button,
+.cancel-button {
     padding: 0.5rem 1rem;
     background-color: #a1bfff;
     color: black;
@@ -532,11 +537,11 @@ form button:hover {
 }
 
 .cypress_nav_image img {
-  max-width: 100%;
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 0 12px #00000088;  
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 12px #00000088;
 }
 
 .feedback-form {
@@ -625,7 +630,7 @@ form label {
     border: 1px solid #ccc;
     font-size: 1rem;
     box-sizing: border-box;
-    
+
 }
 
 footer p {
@@ -636,24 +641,24 @@ footer p {
 }
 
 .site-footer {
-  text-align: center;
-  font-size: 0.25rem;
-  color: #888;
-  padding: 0.5rem 1rem;
+    text-align: center;
+    font-size: 0.25rem;
+    color: #888;
+    padding: 0.5rem 1rem;
 }
 
 .site-footer a {
-  color: #a1bfff;
-  text-decoration: none;
-  font-size: 0.5rem;
+    color: #a1bfff;
+    text-decoration: none;
+    font-size: 0.5rem;
 }
 
 .site-footer a:hover {
-  text-decoration: underline;
-  text-underline-offset: 0.2rem;
+    text-decoration: underline;
+    text-underline-offset: 0.2rem;
 }
 
 .site-footer p {
-  margin: 0;
-  font-size: 0.5rem;
+    margin: 0;
+    font-size: 0.5rem;
 }

@@ -73,7 +73,7 @@ const severityValue = document.getElementById('severity-value');
 const severityLevels = ["Low", "Moderate", "High", "Severe"];
 
 function updateSliderBackground(slider) {
-    const percent = ((slider.value -slider.min) / (slider.max - slider.min)) * 100;
+    const percent = ((slider.value - slider.min) / (slider.max - slider.min)) * 100;
     slider.style.background = `linear-gradient(to right, #47558d ${percent}%, #ddd ${percent}%), #ddd 100%`;
 }
 
